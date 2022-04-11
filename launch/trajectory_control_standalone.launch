@@ -1,0 +1,31 @@
+<launch>
+    <arg name="ns_" default="scorpius_robot_hw" />
+
+    <param
+        name="robot_description"
+        command="$(find xacro)/xacro '$(find scorpius_description)/urdf/scorpius_standalone.xacro'" />
+
+    <node
+        name="rviz"
+        pkg="rviz"
+        type="rviz"
+        args="-d $(find scorpius_description)/config/display.rviz" />
+
+    <node
+        name="robot_state_publisher"
+        pkg="robot_state_publisher"
+        type="robot_state_publisher" />
+
+    <node pkg="scorpius_control" type="static_tf.py" name="static_tf" />
+
+    <include
+        file="$(find scorpius_control)/launch/trajectory_control.launch">
+        <arg name="ns_" value="$(arg ns_)" />
+    </include>
+    
+    <node
+        name="joint_trajectory_control"
+        pkg="rqt_joint_trajectory_controller"
+        type="rqt_joint_trajectory_controller" />
+
+</launch>

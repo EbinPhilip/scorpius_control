@@ -1,0 +1,42 @@
+<launch>
+    <arg name="ns_" default="scorpius_robot_hw" />
+
+    <include
+        file="$(find scorpius_control)/launch/load_config.launch">
+        <arg name="ns_" value="$(arg ns_)" />
+    </include>
+
+    <node name="scorpius_robot_hw" pkg="scorpius_control" type="scorpius_robot_hw_node" output="screen"/>
+
+    <param
+        name="robot_description"
+        command="$(find xacro)/xacro '$(find scorpius_description)/urdf/scorpius_standalone.xacro'" />
+
+    <node
+        name="rviz"
+        pkg="rviz"
+        type="rviz"
+        args="-d $(find scorpius_description)/config/display.rviz" />
+
+    <rosparam file="$(find scorpius_control)/config/position_control.yaml" command="load"/>
+    <rosparam file="$(find scorpius_control)/config/joint_state_controller.yaml" command="load"/>
+    <node
+        name="robot_state_publisher"
+        pkg="robot_state_publisher"
+        type="robot_state_publisher" />
+    <node
+        name="controller_spawner"
+        pkg="controller_manager"
+        type="spawner"
+        respawn="false"
+        output="screen"
+        args="joint_state_controller
+            shoulder_lateral_controller
+            sholder_vertical_controller
+            elbow_controller
+            lower_arm_yaw_controller
+            lower_arm_vertical_controller
+            gripper_yaw_controller"
+    />
+
+</launch>

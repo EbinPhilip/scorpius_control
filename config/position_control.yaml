@@ -1,0 +1,26 @@
+shoulder_lateral_controller:
+  type: position_controllers/JointPositionController
+  joint: shoulder_lateral
+
+sholder_vertical_controller:
+  type: position_controllers/JointPositionController
+  joint: sholder_vertical
+
+elbow_controller:
+  type: position_controllers/JointPositionController
+  joint: elbow
+
+lower_arm_yaw_controller:
+  type: position_controllers/JointPositionController
+  joint: lower_arm_yaw
+
+lower_arm_vertical_controller:
+  type: position_controllers/JointPositionController
+  joint: lower_arm_vertical
+
+gripper_yaw_controller:
+  type: position_controllers/JointPositionController
+  joint: gripper_yaw
+# left_fingerL_controller:
+#     type: position_controllers/JointPositionController
+#     joint:  gripper_yaw
