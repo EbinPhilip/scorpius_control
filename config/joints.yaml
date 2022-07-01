@@ -1,20 +1,23 @@
 joints:
   shoulder_lateral:
     type: PositionControlledJoint
-    default_rpm: 10.0
+    default_rpm: 5.0
   sholder_vertical:
     type: PositionControlledJoint
-    default_rpm: 10.0
+    default_rpm: 5.0
   elbow:
     type: PositionControlledJoint
-    default_rpm: 10.0
+    default_rpm: 5.0
   lower_arm_yaw:
     type: PositionControlledJoint
-    default_rpm: 10.0
+    default_rpm: 5.0
   lower_arm_vertical:
     type: PositionControlledJoint
-    default_rpm: 10.0
+    default_rpm: 5.0
   gripper_yaw:
+    type: PositionControlledJoint
+    default_rpm: 5.0
+  left_finger_joint:
     type: PositionControlledJoint
     default_rpm: 10.0
 

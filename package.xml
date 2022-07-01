@@ -52,6 +52,8 @@
   <depend>configurable_control_hw</depend>
   <depend>dynamixel_x_controller</depend>
   <depend>g15_ros_control</depend>
+  <depend>sting_gripper_transmission</depend>
+  <depend>sting_gripper_action</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

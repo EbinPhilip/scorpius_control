@@ -35,6 +35,14 @@ transmissions:
     actuators:
       - gripper_yaw_actuator
     type: transmission_interface::SimpleTransmission
+  gripper_transmission:
+    joints:
+      - left_finger_joint
+    actuators:
+      - gripper_actuator
+    type: Sting::Gripper_Transmission_Loader
+    package: sting_gripper_transmission
+    reduction: 76.4248517942
 
 
 
