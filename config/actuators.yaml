@@ -32,6 +32,12 @@ actuators:
         controller_name: scorpius_dxl
         cw_limit_deg: -180.0
         ccw_limit_deg: 180.0
+      gripper_actuator:
+        servo_id: 7
+        controller_name: scorpius_dxl
+        zero_deg: 0.0
+        cw_limit_deg: 0.0
+        ccw_limit_deg: 360.0
 
 controllers:
   - package: dynamixel_x_controller

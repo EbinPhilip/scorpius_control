@@ -10,6 +10,7 @@
     <rosparam file="$(find scorpius_control)/config/joint_state_controller.yaml" command="load" />
 
     <node name="scorpius_robot_hw" pkg="scorpius_control" type="scorpius_robot_hw_node" output="screen" />
+    <node pkg="sting_gripper_action" type="gripper_action_node.py" name="gripper_action_node" />    
 
     <node
         name="controller_spawner"
