@@ -20,3 +20,7 @@ joints:
   left_finger_joint:
     type: PositionControlledJoint
     default_rpm: 10.0
+  slider_joint:
+    type: PosVelControlledJoint
+    default_speed: 0.012 # 2400 micro steps/s : 2400*(1.8/8)*(0.008/360) 
+

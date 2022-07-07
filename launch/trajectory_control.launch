@@ -1,5 +1,7 @@
 <launch>
     <arg name="ns_" default="scorpius_robot_hw" />
+    <arg name="port" default="/dev/linear_actuator" />
+    <arg name="baud" default="115200" />
 
     <include
         file="$(find scorpius_control)/launch/load_config.launch">
@@ -11,6 +13,7 @@
 
     <node name="scorpius_robot_hw" pkg="scorpius_control" type="scorpius_robot_hw_node" output="screen" />
     <node pkg="sting_gripper_action" type="gripper_action_node.py" name="gripper_action_node" />    
+    <node name = "ros_serial_node" pkg="rosserial_python" type="serial_node.py" args="_port:=$(arg port) _baud:=$(arg baud)"/>
 
     <node
         name="controller_spawner"
@@ -19,5 +22,7 @@
         respawn="false"
         output="screen"
         args="joint_state_controller
-        scorpius_arm_controller" />
+        scorpius_arm_controller
+        sting_gripper_controller
+        slider_joint_controller" />
 </launch>
