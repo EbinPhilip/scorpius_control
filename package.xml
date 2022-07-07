@@ -54,6 +54,8 @@
   <depend>g15_ros_control</depend>
   <depend>sting_gripper_transmission</depend>
   <depend>sting_gripper_action</depend>
+  <depend>rqt_joint_trajectory_controller</depend>
+  <depend>linear_actuator_controller</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
