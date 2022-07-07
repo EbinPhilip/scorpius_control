@@ -1,0 +1,11 @@
+<launch>
+    <node
+        name="rviz"
+        pkg="rviz"
+        type="rviz"
+        args="-d $(find scorpius_description)/config/display.rviz" />
+    <node
+        name="joint_trajectory_control"
+        pkg="rqt_joint_trajectory_controller"
+        type="rqt_joint_trajectory_controller" />
+</launch>
