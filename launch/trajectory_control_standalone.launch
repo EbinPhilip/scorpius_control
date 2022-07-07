@@ -1,15 +1,14 @@
 <launch>
     <arg name="ns_" default="scorpius_robot_hw" />
+    <arg name="gui" default="false" />
 
     <param
         name="robot_description"
         command="$(find xacro)/xacro '$(find scorpius_description)/urdf/scorpius_standalone.xacro'" />
 
-    <node
-        name="rviz"
-        pkg="rviz"
-        type="rviz"
-        args="-d $(find scorpius_description)/config/display.rviz" />
+    <include if="$(arg gui)"
+        file="$(find scorpius_control)/launch/gui.launch" />
+
 
     <node
         name="robot_state_publisher"
@@ -22,10 +21,5 @@
         file="$(find scorpius_control)/launch/trajectory_control.launch">
         <arg name="ns_" value="$(arg ns_)" />
     </include>
-    
-    <node
-        name="joint_trajectory_control"
-        pkg="rqt_joint_trajectory_controller"
-        type="rqt_joint_trajectory_controller" />
 
 </launch>
