@@ -43,6 +43,16 @@ transmissions:
     type: Sting::Gripper_Transmission_Loader
     package: sting_gripper_transmission
     reduction: 76.4248517942
+  slider_joint_transmission:
+    joints:
+      - slider_joint
+    actuators:
+      - linear_actuator_controller_actuator
+    type: Linear_Actuator::Transmission_Loader
+    package: linear_actuator_controller
+    min_step_deg: 1.8
+    micro_steps: 8
+    lead: 0.008
 
 
 

@@ -47,3 +47,13 @@ controllers:
         controller_id: 1
         port: /dev/u2d2
         baud_rate: 57600
+  - package: linear_actuator_controller
+    class: Linear_Actuator::Linear_Actuator_Controller_Config_Parser
+    config:
+      linear_actuator_controller:
+        command_topic: input
+        feedback_topic: feedback
+        publish_hz: 20.0
+        max_position: 90000
+        max_speed: 2400.0
+        max_acceleration: 2400.0

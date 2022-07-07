@@ -43,3 +43,7 @@ scorpius_arm_controller:
 sting_gripper_controller:
     type: position_controllers/JointPositionController
     joint: left_finger_joint
+
+slider_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: slider_joint
