@@ -1,14 +1,3 @@
-# scorpius_arm_controller:
-#   type: position_controllers/JointTrajectoryController
-#   # type: pos_vel_controllers/JointTrajectoryController
-#   joints:
-#     - shoulder_lateral
-#     - sholder_vertical
-#     - elbow
-#     - lower_arm_yaw
-#     - lower_arm_vertical
-#     - gripper_yaw
-
 scorpius_arm_controller:
     type: joint_path_tracking_controller/JointPathTrackingController
     joints:
