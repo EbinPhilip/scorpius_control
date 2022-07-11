@@ -7,37 +7,44 @@ actuators:
         controller_name: scorpius_dxl
         cw_limit_deg: -180.0
         ccw_limit_deg: 180.0
+        profile_acceleration: 1 
       sholder_vertical_actuator:
         servo_id: 2
         controller_name: scorpius_dxl
         cw_limit_deg: -180.0
         ccw_limit_deg: 180.0
+        profile_acceleration: 1 
       elbow_actuator:
         servo_id: 3
         controller_name: scorpius_dxl
         cw_limit_deg: -180.0
         ccw_limit_deg: 180.0
+        profile_acceleration: 1
       lower_arm_yaw_actuator:
         servo_id: 4
         controller_name: scorpius_dxl
         cw_limit_deg: -180.0
         ccw_limit_deg: 180.0
+        profile_acceleration: 1
       lower_arm_vertical_actuator:
         servo_id: 5
         controller_name: scorpius_dxl
         cw_limit_deg: -180.0
         ccw_limit_deg: 180.0
+        profile_acceleration: 1
       gripper_yaw_actuator:
         servo_id: 6
         controller_name: scorpius_dxl
         cw_limit_deg: -180.0
         ccw_limit_deg: 180.0
+        profile_acceleration: 1
       gripper_actuator:
         servo_id: 7
         controller_name: scorpius_dxl
         zero_deg: 0.0
         cw_limit_deg: 0.0
         ccw_limit_deg: 360.0
+        profile_acceleration: 1
 
 controllers:
   - package: dynamixel_x_controller
@@ -51,9 +58,9 @@ controllers:
     class: Linear_Actuator::Linear_Actuator_Controller_Config_Parser
     config:
       linear_actuator_controller:
-        command_topic: input
-        feedback_topic: feedback
+        command_topic: /scorpius_robot_hw/input
+        feedback_topic: /scorpius_robot_hw/feedback
         publish_hz: 20.0
         max_position: 90000
-        max_speed: 2400.0
-        max_acceleration: 2400.0
+        max_speed: 4800.0
+        max_acceleration: 4800.0

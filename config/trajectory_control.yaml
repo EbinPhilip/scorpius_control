@@ -1,49 +1,80 @@
+# scorpius_arm_controller:
+#   type: position_controllers/JointTrajectoryController
+#   # type: pos_vel_controllers/JointTrajectoryController
+#   joints:
+#     - shoulder_lateral
+#     - sholder_vertical
+#     - elbow
+#     - lower_arm_yaw
+#     - lower_arm_vertical
+#     - gripper_yaw
+
 scorpius_arm_controller:
-  type: position_controllers/JointTrajectoryController
-  # type: pos_vel_controllers/JointTrajectoryController
-  joints:
-    - shoulder_lateral
-    - sholder_vertical
-    - elbow
-    - lower_arm_yaw
-    - lower_arm_vertical
-    - gripper_yaw
-  gains:
-    shoulder_lateral:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    sholder_vertical:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    elbow:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    lower_arm_yaw:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    lower_arm_vertical:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
-    gripper_yaw:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+    type: joint_path_tracking_controller/JointPathTrackingController
+    joints:
+        - name: shoulder_lateral
+          min_pos_deg: -90.0
+          max_pos_deg: 90.0
+          min_rpm: 0.24
+          default_rpm: 1.0
+          max_rpm: 3.0
+          waypoint_tolerance: 0.12
+          goal_tolerance: 0.06
+
+        - name: sholder_vertical
+          min_pos_deg: -90.0
+          max_pos_deg: 90.0
+          min_rpm: 0.24
+          default_rpm: 1.0
+          max_rpm: 3.0
+          waypoint_tolerance: 0.12
+          goal_tolerance: 0.06
+
+        - name: elbow
+          min_pos_deg: -90.0
+          max_pos_deg: 90.0
+          min_rpm: 0.24
+          default_rpm: 1.0
+          max_rpm: 3.0
+          waypoint_tolerance: 0.12
+          goal_tolerance: 0.06
+
+        - name: lower_arm_yaw
+          min_pos_deg: -180.0
+          max_pos_deg: 180.0
+          min_rpm: 0.24
+          default_rpm: 1.0
+          max_rpm: 3.0
+          waypoint_tolerance: 0.12
+          goal_tolerance: 0.06
+
+        - name: lower_arm_vertical
+          min_pos_deg: -90.0
+          max_pos_deg: 90.0
+          min_rpm: 0.24
+          default_rpm: 1.0
+          max_rpm: 3.0
+          waypoint_tolerance: 0.12
+          goal_tolerance: 0.06
+
+        - name: gripper_yaw
+          min_pos_deg: -180.0
+          max_pos_deg: 180.0
+          min_rpm: 0.24
+          default_rpm: 1.0
+          max_rpm: 3.0
+          waypoint_tolerance: 0.12
+          goal_tolerance: 0.06
+
+        - name: slider_joint
+          min_pos: 0.0
+          max_pos: 0.367
+          min_speed: 0.001
+          default_speed: 0.008
+          max_speed: 0.024
+          waypoint_tolerance: 0.012 #0.034
+          goal_tolerance:     0.00001 #0.02
 
 sting_gripper_controller:
     type: position_controllers/JointPositionController
     joint: left_finger_joint
-
-slider_joint_controller:
-    type: position_controllers/JointPositionController
-    joint: slider_joint
