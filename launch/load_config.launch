@@ -2,7 +2,7 @@
     <arg name="ns_" default="scorpius_robot_hw" />
 
     <rosparam file="$(find scorpius_control)/config/actuators.yaml" command="load" ns="$(arg ns_)/"/>
-    <rosparam file="$(find scorpius_control)/config/joints.yaml" command="load" ns="$(arg ns_)/"/>
+    <rosparam file="$(find scorpius_control)/config/joints_pos_vel.yaml" command="load" ns="$(arg ns_)/"/>
     <rosparam file="$(find scorpius_control)/config/transmissions.yaml" command="load" ns="$(arg ns_)/"/>
     <rosparam file="$(find scorpius_control)/config/gripper.yaml" command="load"/>
 </launch>
