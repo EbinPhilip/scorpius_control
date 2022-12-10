@@ -45,6 +45,13 @@ actuators:
         cw_limit_deg: 0.0
         ccw_limit_deg: 360.0
         profile_acceleration: 1
+      camera_joint_actuator:
+        servo_id: 1
+        controller_name: camera_joint_controller
+        # zero_deg: 0.0
+        cw_limit_deg: -180.0
+        ccw_limit_deg: 180.0
+        max_effort_value: 1000.0
 
 controllers:
   - package: dynamixel_x_controller
@@ -53,6 +60,10 @@ controllers:
       scorpius_dxl:
         controller_id: 1
         port: /dev/u2d2
+        baud_rate: 57600
+      camera_joint_controller:
+        controller_id: 1
+        port: /dev/ttyUSB1
         baud_rate: 57600
   - package: linear_actuator_controller
     class: Linear_Actuator::Linear_Actuator_Controller_Config_Parser

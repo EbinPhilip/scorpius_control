@@ -53,6 +53,12 @@ transmissions:
     min_step_deg: 1.8
     micro_steps: 8
     lead: 0.008
+  camera_joint_transmission:
+    joints:
+      - camera_tilt_joint
+    actuators:
+      - camera_joint_actuator
+    type: transmission_interface::SimpleTransmission
 
 
 
